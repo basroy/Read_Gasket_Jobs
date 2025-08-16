@@ -1,0 +1,26 @@
+Procedure demo_qty_and_price() is called with a parameter which is a file name, which inherently calls main() in the same .py.
+   The file parameter may have a file name that starts with JOB-....xml
+        This filename is constructed in GaskUI-->Summarize Orders(ButtonClick action (lambda fucntion))--> 
+               Get_JobEntry()-->read_tmp_file()
+                          where is reading a tmp_file.txt to read  contents within this file to get the 
+                       JOB<xxx>.xml name.  (Statement file.readlines())
+       tmp_file is getting populated  Copy_Jobname()
+                            if f_job[:3] == "JOB":
+                               with open(tmpf,"w") as file:    #Open file in write mode.
+      Copy_Jobname()  itself is getting called from open_file(), which is triggered when we click on the filr name in the UI treeview of file listing.  
+      So once tmp_file gets written into with JOB<xxxx> , module readQuotefile.py is gettign called.         
+
+readQuotefile--> main() --> readjobfile.read_jobs()
+          read_jobs is using the xml.tree libarry like this
+                 Et.parse(jobfile)
+          and then doing this simple extraction using the elemnts tags in the JOB-XXX.xml 
+                        for l1 in topattr.findall('l1'):
+        			text = l1.text
+       				 timestamp, uuid, filetag = text.split(',')
+      				  print(f"Timestamp {timestamp}  uuid {uuid}   filetag {filetag}")
+      			     if filetag == "Quote":
+      					      qlist = uuid + ',' + qlist
+      			     if filetag == "RequestForQuote":
+        			    reqlist = uuid + ',' + reqlist
+
+      This section of findall looping is what we have to replace with 're' library.

@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<CustomerDrawingInfo uuid="8E520D9D-34D2-4417-ADF7-139D87688858" JobUuid="0FA96E79-D83E-AD02-028C-EE61E3592C9B">
+    <TransactionResult status="Success"></TransactionResult>
+    <Conditions/>
+    <CustomerDrawingUuid>C453B169-0ADD-8309-0FCA-1879CFF654E3</CustomerDrawingUuid>
+    <GeometryLayer></GeometryLayer>
+    <ScaleFactorDescription>Drawing Scale:  1  (from  GLOBAL)</ScaleFactorDescription>
+    <ScaleFactorDescriptions>
+        <Description>Drawing Scale:  1  (from  GLOBAL)</Description>
+        <Description>Drawing Scale:  1  (from  ISO-25)</Description>
+    </ScaleFactorDescriptions>
+    <DrawingLayerThumbnails>
+        <DrawingLayerThumbnail layer="" mimeType="image/png" encoding="base64">iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAIAAAC0Ujn1AAAAO0lEQVRIie3WsQ0AMAwCQeP9
+dyaNV/hUzwAnREXaDpOFXGlpaWlpaenfdBKKhgLSNwXxoZY7ZmDrcK0fjaAPLYN08aIAAAAA
+SUVORK5CYII=</DrawingLayerThumbnail>
+        <DrawingLayerThumbnail layer="0" mimeType="image/png" encoding="base64">iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAIAAAC0Ujn1AAAAO0lEQVRIie3WsQ0AMAwCQeP9
+dyaNV/hUzwAnREXaDpOFXGlpaWlpaenfdBKKhgLSNwXxoZY7ZmDrcK0fjaAPLYN08aIAAAAA
+SUVORK5CYII=</DrawingLayerThumbnail>
+    </DrawingLayerThumbnails>
+    <DrawingLayerImages>
+        <DrawingLayerImage layer="" mimeType="image/png" encoding="base64">iVBORw0KGgoAAAANSUhEUgAAAlgAAAJYCAIAAAAxBA+LAAAJ9klEQVR4nO3dwW7iMBRAUVzx
+/7+cWVRiqhmqtmAo9j1niSro7uq9JM44juMEAFVvv/0PAMBvEkIA0oQQgDQhBCBNCAFIE0IA
+0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBN
+CAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQ
+gDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFI
+E0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQh
+BCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA
+0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBN
+CAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQ
+gDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFI
+E0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQh
+BCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA
+0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBN
+CAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQ
+gDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFI
+E0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQh
+BCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA
+0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBN
+CAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQ
+gDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFI
+E0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQh
+BCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA
+0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBN
+CAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQ
+gDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFI
+E0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQh
+BCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA
+0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBN
+CAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQ
+gDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFI
+E0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQh
+BCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA
+0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBN
+CAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQ
+gDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIO59OpzHG9O89jmP6dwLAdONBxRrjUd8MABM9ajV6
+HMcjBk0AmOuB1wi1EIDX9/AF5nsLrUkBeE1PupLnkiEAr+lJj09YkwLwmp73HKEWAvCCnvpA
+vRYC8GqcLANA2psRDYCyT49Yc5MnAAXnq8EbY1zqqIgAbOx89dNL/C5FlEMAtvTFzTLHcbwn
+0KVEALZ0fSL8x8cWGg0B2MkPHp8wGgKwn29NhBdGQwA2c8sD9UZDALZx48kyWgjAHm4/Ys1q
+FIAN3HXWqEO0AVjdhEO3tRCAdd0bQhcLAVjahInQxUIA1jXtfYSGQgBWNCeEhkIAFjXzDfWG
+QgCWMy2EhkIAVjRzIgSA5UwOoe0oAGuZGULbUQCWYzUKQJoQApAmhACkzQ+h+2UAWMjkELpf
+BoC1WI0CkCaEAKQJIQBpTpYBIG3+ROh+GQAWYjUKQJoQApAmhACkeUM9AGlOlgEgzWoUgLRp
+IbQXBWBF3lAPQNqcEBoHAVjUtInQOAjAiiaE0DgIwLrmTITGQQAWdW8IxxgqCMC67gqhpSgA
+q7s9hO8VNA4CsLQbQ6iCAOzhlhCqIADb+HEIVRCAnZy//6cSCMB+vhXCy92hKgjAZr4OoUEQ
+gI19GkJTIAAFf0P4/9PxEgjA9s4f+6d8ANScxQ+AsplvqAeA5QghAGlCCECaEAKQJoQApAkh
+AGlCCECaEAKQJoQApAkhAGlCCECaEAKQJoQApAkhAGlCCECaEAKQJoQApAkhAGlCCECaEAKQ
+JoQApAkhAGlCCEDaeP5PHsfx/B8FgKuGLAFQZjUKQJoQApAmhACkCSEAaUIIQJoQApAmhACk
+CSEAaUIIQJoQApAmhACkCSEAaUIIQJoQApAmhACkCSEAaUIIQJoQApAmhACkCSEAaUIIQJoQ
+ApAmhACkCSEAaUIIQJoQApAmhACkCSEAaUIIQJoQApAmhACkCSEAaUIIQJoQApD2B4t6pqoj
+g2+wAAAAAElFTkSuQmCC</DrawingLayerImage>
+        <DrawingLayerImage layer="0" mimeType="image/png" encoding="base64">iVBORw0KGgoAAAANSUhEUgAAAlgAAAJYCAIAAAAxBA+LAAAJ9klEQVR4nO3dwW7iMBRAUVzx
+/7+cWVRiqhmqtmAo9j1niSro7uq9JM44juMEAFVvv/0PAMBvEkIA0oQQgDQhBCBNCAFIE0IA
+0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBN
+CAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQ
+gDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFI
+E0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQh
+BCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA
+0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBN
+CAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQ
+gDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFI
+E0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQh
+BCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA
+0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBN
+CAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQ
+gDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFI
+E0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQh
+BCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA
+0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBN
+CAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQ
+gDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFI
+E0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQh
+BCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA
+0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBN
+CAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQ
+gDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFI
+E0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQh
+BCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA
+0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBN
+CAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQ
+gDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFI
+E0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQh
+BCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA
+0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBN
+CAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIE0IA0oQQ
+gDQhBCBNCAFIE0IA0oQQgDQhBCBNCAFIO59OpzHG9O89jmP6dwLAdONBxRrjUd8MABM9ajV6
+HMcjBk0AmOuB1wi1EIDX9/AF5nsLrUkBeE1PupLnkiEAr+lJj09YkwLwmp73HKEWAvCCnvpA
+vRYC8GqcLANA2psRDYCyT49Yc5MnAAXnq8EbY1zqqIgAbOx89dNL/C5FlEMAtvTFzTLHcbwn
+0KVEALZ0fSL8x8cWGg0B2MkPHp8wGgKwn29NhBdGQwA2c8sD9UZDALZx48kyWgjAHm4/Ys1q
+FIAN3HXWqEO0AVjdhEO3tRCAdd0bQhcLAVjahInQxUIA1jXtfYSGQgBWNCeEhkIAFjXzDfWG
+QgCWMy2EhkIAVjRzIgSA5UwOoe0oAGuZGULbUQCWYzUKQJoQApAmhACkzQ+h+2UAWMjkELpf
+BoC1WI0CkCaEAKQJIQBpTpYBIG3+ROh+GQAWYjUKQJoQApAmhACkeUM9AGlOlgEgzWoUgLRp
+IbQXBWBF3lAPQNqcEBoHAVjUtInQOAjAiiaE0DgIwLrmTITGQQAWdW8IxxgqCMC67gqhpSgA
+q7s9hO8VNA4CsLQbQ6iCAOzhlhCqIADb+HEIVRCAnZy//6cSCMB+vhXCy92hKgjAZr4OoUEQ
+gI19GkJTIAAFf0P4/9PxEgjA9s4f+6d8ANScxQ+AsplvqAeA5QghAGlCCECaEAKQJoQApAkh
+AGlCCECaEAKQJoQApAkhAGlCCECaEAKQJoQApAkhAGlCCECaEAKQJoQApAkhAGlCCECaEAKQ
+JoQApAkhAGlCCEDaeP5PHsfx/B8FgKuGLAFQZjUKQJoQApAmhACkCSEAaUIIQJoQApAmhACk
+CSEAaUIIQJoQApAmhACkCSEAaUIIQJoQApAmhACkCSEAaUIIQJoQApAmhACkCSEAaUIIQJoQ
+ApAmhACkCSEAaUIIQJoQApAmhACkCSEAaUIIQJoQApAmhACkCSEAaUIIQJoQApD2B4t6pqoj
+g2+wAAAAAElFTkSuQmCC</DrawingLayerImage>
+    </DrawingLayerImages>
+    <RequestForQuoteOptions>
+        <Materials>
+            <Material uuid="9F8EF073-6E48-455E-8792-6E0B6693CA49">
+                <Description>Cork/rubber sheeting</Description>
+                <MaterialTypeDescription>Organic</MaterialTypeDescription>
+                <Thickness>0.79</Thickness>
+                <AdhesiveBacked>No</AdhesiveBacked>
+                <Hardness>60</Hardness>
+                <MaterialColorDescription>Brown</MaterialColorDescription>
+            </Material>
+            <Material uuid="4634F610-9978-431B-9A11-4B442A6C8B1F">
+                <Description>Cork/rubber sheeting</Description>
+                <MaterialTypeDescription>Organic</MaterialTypeDescription>
+                <Thickness>1.59</Thickness>
+                <AdhesiveBacked>No</AdhesiveBacked>
+                <Hardness>60</Hardness>
+                <MaterialColorDescription>Brown</MaterialColorDescription>
+            </Material>
+            <Material uuid="97CC5A77-2A84-4502-BF08-9E62FC2A1CD2">
+                <Description>Cork/rubber sheeting</Description>
+                <MaterialTypeDescription>Organic</MaterialTypeDescription>
+                <Thickness>2.38</Thickness>
+                <AdhesiveBacked>No</AdhesiveBacked>
+                <Hardness>60</Hardness>
+                <MaterialColorDescription>Brown</MaterialColorDescription>
+            </Material>
+            <Material uuid="8FED6494-3B44-48A7-A2D7-C3E1992B8D34">
+                <Description>Cork/rubber sheeting</Description>
+                <MaterialTypeDescription>Organic</MaterialTypeDescription>
+                <Thickness>3.18</Thickness>
+                <AdhesiveBacked>No</AdhesiveBacked>
+                <Hardness>60</Hardness>
+                <MaterialColorDescription>Brown</MaterialColorDescription>
+            </Material>
+            <Material uuid="9208E7D2-A389-4A90-9983-AF48233B4E46">
+                <Description>Buna-N</Description>
+                <MaterialTypeDescription>Solid Sheet</MaterialTypeDescription>
+                <Thickness>0.397</Thickness>
+                <AdhesiveBacked>No</AdhesiveBacked>
+                <Hardness>50</Hardness>
+                <MaterialColorDescription>Black</MaterialColorDescription>
+            </Material>
+            <Material uuid="9B1EA427-847F-40D1-8550-699790F135C8">
+                <Description>Viton</Description>
+                <MaterialTypeDescription>Solid Sheet</MaterialTypeDescription>
+                <Thickness>0.79</Thickness>
+                <AdhesiveBacked>No</AdhesiveBacked>
+                <Hardness>75</Hardness>
+                <MaterialColorDescription>Black</MaterialColorDescription>
+            </Material>
+            <Material uuid="63685308-3A49-4CFE-BBF1-E1F2EEB66B13">
+                <Description>Silicone rubber, Medical grade</Description>
+                <MaterialTypeDescription>Solid Sheet</MaterialTypeDescription>
+                <Thickness>0.79</Thickness>
+                <AdhesiveBacked>No</AdhesiveBacked>
+                <Hardness>50</Hardness>
+                <MaterialColorDescription>Orange</MaterialColorDescription>
+            </Material>
+            <Material uuid="36AD0626-A645-4B8E-A3BD-94CC9E6B21A6">
+                <Description>Neoprene rubber</Description>
+                <MaterialTypeDescription>Solid Sheet</MaterialTypeDescription>
+                <Thickness>0.79</Thickness>
+                <AdhesiveBacked>Yes</AdhesiveBacked>
+                <Hardness>40</Hardness>
+                <MaterialColorDescription>Black</MaterialColorDescription>
+            </Material>
+            <Material uuid="8A8E6DE6-73BD-4656-8941-767DC952E681">
+                <Description>Buna-N</Description>
+                <MaterialTypeDescription>Solid Sheet</MaterialTypeDescription>
+                <Thickness>0.794</Thickness>
+                <AdhesiveBacked>No</AdhesiveBacked>
+                <Hardness>50</Hardness>
+                <MaterialColorDescription>Black</MaterialColorDescription>
+            </Material>
+            <Material uuid="39F86F6A-DF52-470F-967E-16C3E41EE1ED">
+                <Description>Viton</Description>
+                <MaterialTypeDescription>Solid Sheet</MaterialTypeDescription>
+                <Thickness>1.59</Thickness>
+                <AdhesiveBacked>No</AdhesiveBacked>
+                <Hardness>75</Hardness>
+                <MaterialColorDescription>Black</MaterialColorDescription>
+            </Material>
+            <Material uuid="84CDB5AE-B35F-434F-887B-F6347819EEA8">
+                <Description>Silicone rubber, Medical grade</Description>
+                <MaterialTypeDescription>Solid Sheet</MaterialTypeDescription>
+                <Thickness>1.59</Thickness>
+                <AdhesiveBacked>No</AdhesiveBacked>
+                <Hardness>50</Hardness>
+                <MaterialColorDescription>Orange</MaterialColorDescription>
+            </Material>
+            <Material uuid="923E23D7-D8DA-4FE5-863B-E6640BB33D46">
+                <Description>Neoprene rubber</Description>
+                <MaterialTypeDescription>Solid Sheet</MaterialTypeDescription>
+                <Thickness>1.59</Thickness>
+                <AdhesiveBacked>Yes</AdhesiveBacked>
+                <Hardness>40</Hardness>
+                <MaterialColorDescription>Black</MaterialColorDescription>
+            </Material>
+            <Material uuid="6948830D-DBA3-4DB3-9D51-F97D0F29DA07">
+                <Description>Buna-N</Description>
+                <MaterialTypeDescription>Solid Sheet</MaterialTypeDescription>
+                <Thickness>2</Thickness>
+                <AdhesiveBacked>No</AdhesiveBacked>
+                <Hardness>50</Hardness>
+                <MaterialColorDescription>Black</MaterialColorDescription>
+            </Material>
+            <Material uuid="6C1D9C14-8C15-44B1-9858-C1C5C430BF70">
+                <Description>Silicone Rubber, Medical grade</Description>
+                <MaterialTypeDescription>Solid Sheet</MaterialTypeDescription>
+                <Thickness>3.18</Thickness>
+                <AdhesiveBacked>No</AdhesiveBacked>
+                <Hardness>40</Hardness>
+                <MaterialColorDescription>Orange</MaterialColorDescription>
+            </Material>
+            <Material uuid="6DBE4F8B-7562-416D-813D-B31A9EA1FCBF">
+                <Description>Neoprene rubber</Description>
+                <MaterialTypeDescription>Solid Sheet</MaterialTypeDescription>
+                <Thickness>3.18</Thickness>
+                <AdhesiveBacked>Yes</AdhesiveBacked>
+                <Hardness>40</Hardness>
+                <MaterialColorDescription>Black</MaterialColorDescription>
+            </Material>
+            <Material uuid="09DB642C-1058-4BB3-894D-42D15C1A6951">
+                <Description>Poron foam, Supported</Description>
+                <MaterialTypeDescription>Foam</MaterialTypeDescription>
+                <Thickness>0.79</Thickness>
+                <AdhesiveBacked>Yes</AdhesiveBacked>
+                <Hardness>10</Hardness>
+                <MaterialColorDescription>Grey</MaterialColorDescription>
+            </Material>
+            <Material uuid="04422B40-F394-4506-96C1-4E1FF1A7C694">
+                <Description>Silicone foam</Description>
+                <MaterialTypeDescription>Foam</MaterialTypeDescription>
+                <Thickness>1.59</Thickness>
+                <AdhesiveBacked>No</AdhesiveBacked>
+                <Hardness>20</Hardness>
+                <MaterialColorDescription>Orange</MaterialColorDescription>
+            </Material>
+            <Material uuid="55BB6181-C71F-41DD-AFBA-AF69045F90AF">
+                <Description>Poron foam, Supported</Description>
+                <MaterialTypeDescription>Foam</MaterialTypeDescription>
+                <Thickness>1.59</Thickness>
+                <AdhesiveBacked>Yes</AdhesiveBacked>
+                <Hardness>10</Hardness>
+                <MaterialColorDescription>Grey</MaterialColorDescription>
+            </Material>
+            <Material uuid="6FD70F5D-1FA6-4E07-B876-77CC6E257E0A">
+                <Description>Silicone  foam</Description>
+                <MaterialTypeDescription>Foam</MaterialTypeDescription>
+                <Thickness>3.18</Thickness>
+                <AdhesiveBacked>No</AdhesiveBacked>
+                <Hardness>20</Hardness>
+                <MaterialColorDescription>Orange</MaterialColorDescription>
+            </Material>
+            <Material uuid="F000AE17-B88C-41E7-A185-FFC942722443">
+                <Description>Poron foam, Supported</Description>
+                <MaterialTypeDescription>Foam</MaterialTypeDescription>
+                <Thickness>3.18</Thickness>
+                <AdhesiveBacked>Yes</AdhesiveBacked>
+                <Hardness>10</Hardness>
+                <MaterialColorDescription>Grey</MaterialColorDescription>
+            </Material>
+            <Material uuid="2731112F-2A52-48A1-A39F-D79EE837530E">
+                <Description>Silicone foam</Description>
+                <MaterialTypeDescription>Foam</MaterialTypeDescription>
+                <Thickness>4.76</Thickness>
+                <AdhesiveBacked>No</AdhesiveBacked>
+                <Hardness>20</Hardness>
+                <MaterialColorDescription>Orange</MaterialColorDescription>
+            </Material>
+            <Material uuid="63B0D5E1-5C0C-4EA5-8A8C-387C61749C51">
+                <Description>Silicone foam</Description>
+                <MaterialTypeDescription>Foam</MaterialTypeDescription>
+                <Thickness>6.35</Thickness>
+                <AdhesiveBacked>No</AdhesiveBacked>
+                <Hardness>10</Hardness>
+                <MaterialColorDescription>Orange</MaterialColorDescription>
+            </Material>
+            <Material uuid="3DDA108D-DC4C-42A2-80A5-DF1C6FDD6B2E">
+                <Description>Poron foam</Description>
+                <MaterialTypeDescription>Foam</MaterialTypeDescription>
+                <Thickness>6.35</Thickness>
+                <AdhesiveBacked>Yes</AdhesiveBacked>
+                <Hardness>10</Hardness>
+                <MaterialColorDescription>Grey</MaterialColorDescription>
+            </Material>
+            <DefaultValue></DefaultValue>
+        </Materials>
+        <MaterialConditionForExternalEdges>
+            <MaterialCondition uuid="3CB7D707-AFDE-413B-A185-7EBCF38CEB7B">
+                <Description>Best fit</Description>
+            </MaterialCondition>
+            <MaterialCondition uuid="4D483076-779F-4C5C-9F8A-D2D0703E9E2F">
+                <Description>Min material</Description>
+            </MaterialCondition>
+            <MaterialCondition uuid="D519CC71-5D4A-471F-B5B7-07E1E87A2AF8">
+                <Description>Max material</Description>
+            </MaterialCondition>
+            <DefaultValue>3CB7D707-AFDE-413B-A185-7EBCF38CEB7B</DefaultValue>
+        </MaterialConditionForExternalEdges>
+        <MaterialConditionForInternalEdges>
+            <MaterialCondition uuid="3CB7D707-AFDE-413B-A185-7EBCF38CEB7B">
+                <Description>Best fit</Description>
+            </MaterialCondition>
+            <MaterialCondition uuid="4D483076-779F-4C5C-9F8A-D2D0703E9E2F">
+                <Description>Min material</Description>
+            </MaterialCondition>
+            <MaterialCondition uuid="D519CC71-5D4A-471F-B5B7-07E1E87A2AF8">
+                <Description>Max material</Description>
+            </MaterialCondition>
+            <DefaultValue>3CB7D707-AFDE-413B-A185-7EBCF38CEB7B</DefaultValue>
+        </MaterialConditionForInternalEdges>
+        <MaterialConditionTolerance>
+            <MinimumValue>0.1</MinimumValue>
+            <MaximumValue>5</MaximumValue>
+            <DefaultValue>0.5</DefaultValue>
+            <Units>mm</Units>
+        </MaterialConditionTolerance>
+        <Quantity>
+            <MinimumValue>1</MinimumValue>
+            <MaximumValue>100</MaximumValue>
+            <DefaultValue>0</DefaultValue>
+            <Units></Units>
+        </Quantity>
+        <ShippingOptions>
+            <ShippingOption uuid="451DC917-2926-4C5E-B01F-0CEF8D68A46A">
+                <Description>UPS Overnight</Description>
+            </ShippingOption>
+            <ShippingOption uuid="6A0C491C-48B3-4776-A9E6-572304879331">
+                <Description>UPS 2-Day</Description>
+            </ShippingOption>
+            <ShippingOption uuid="71F132AD-ED95-2964-D468-3DC09A54C6F0">
+                <Description>Fedex Ground</Description>
+            </ShippingOption>
+            <ShippingOption uuid="71FE7702-C426-967A-A908-03B59F8C905E">
+                <Description>Fedex Overnight</Description>
+            </ShippingOption>
+            <ShippingOption uuid="720570CB-C9A1-3017-C965-08EA5F12CEA7">
+                <Description>Fedex 2-Day</Description>
+            </ShippingOption>
+            <ShippingOption uuid="FCDBF50C-EA28-4A4D-8538-68033EFD8771">
+                <Description>UPS Ground</Description>
+            </ShippingOption>
+            <DefaultValue>FCDBF50C-EA28-4A4D-8538-68033EFD8771</DefaultValue>
+        </ShippingOptions>
+    </RequestForQuoteOptions>
+</CustomerDrawingInfo>

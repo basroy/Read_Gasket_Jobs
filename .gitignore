@@ -1,0 +1,13 @@
+#Byte-compiled sample gitignore
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Editors
+.idea/
+
+# Virtual environment
+.venv/
+
+# Distribution / packaging
+.Python

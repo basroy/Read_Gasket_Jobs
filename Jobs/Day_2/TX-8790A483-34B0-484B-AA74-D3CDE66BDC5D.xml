@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<CustomerOrderAcknowledge uuid="8790A483-34B0-484B-AA74-D3CDE66BDC5D" JobUuid="0FA96E79-D83E-AD02-028C-EE61E3592C9B">
+    <TransactionResult status="Success"></TransactionResult>
+    <Conditions/>
+    <CustomerOrderUuid>5E8109EC-69A0-B665-FF47-59451AC7D865</CustomerOrderUuid>
+</CustomerOrderAcknowledge>
