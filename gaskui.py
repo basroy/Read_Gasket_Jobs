@@ -7,6 +7,10 @@ import subprocess
 import platform
 import readQuotefile
 import datetime as dt
+import xml.etree.ElementTree as ET
+from tkinter import filedialog
+from tkinter import messagebox
+
 
 opt1: str = 'View Quantity on all Job Quotes'
 opt2: str = 'View Quantity and Price on all Job Quotes'
@@ -16,6 +20,42 @@ opt4: str = 'View Quantity and Price on final Job Quote'
 #path_to_my_project = 'C:\\Users\\Bashobi\\PycharmProjects\\PythonProject\\GasketUI\\Jobs'
 path_to_my_project = parse.JobPath.rootpath
 
+"""
+def convert_job_xml_to_txt(startnode):
+    for f_job in os.listdir(startnode):
+        full_path = os.path.join(startnode, f_job)
+
+        if os.path.isdir(full_path):
+            convert_job_xml_to_txt(full_path)  # Recurse
+            continue
+
+        if f_job.startswith("JOB") and f_job.endswith(".xml"):
+            try:
+                tree = ET.parse(full_path)
+                root = tree.getroot()
+                pais = root.find('pais')
+                if pais is None:
+                    print(f"No <pais> section found in {f_job}")
+                    continue
+
+                lines = []
+                for l1 in pais.findall('l1'):
+                    if l1.text:
+                        clean_line = l1.text.strip()
+                        lines.append(clean_line)
+
+                if lines:
+                    txt_filename = f_job.replace(".xml", ".txt")
+                    txt_path = os.path.join(startnode, txt_filename)
+                    with open(txt_path, "w") as txtfile:
+                        txtfile.write('\n'.join(lines))
+                    print(f"Converted {f_job} to {txt_filename}")
+                else:
+                    print(f"No valid <l1> entries in {f_job}")
+
+            except ET.ParseError as e:
+                print(f"Parse error in {f_job}: {e}")
+"""
 class GaskUI:
     def __init__(self, job):
         self.job = job
@@ -28,7 +68,7 @@ class GaskUI:
         jobLabel = Label(self.job,
                          image=self.titleImage,
                          compound=LEFT,
-                         text='Preview Glenn''s Gasket Job Quotes',
+                         text='Preview Daily Job Quotes',
                          font=('serif', 14, 'bold'),
                          fg=parse.Colors.WHITE,
                          bg=parse.Colors.GREEN,
@@ -38,15 +78,43 @@ class GaskUI:
         jobLabel.place(x=40, y=10, relwidth=1)
 
         updJOBButton = Button(self.job,
-                              text='Click to convert JOB to xml format',
-                              font=('serif', 15, 'bold'),
+                              text='JOB to XML',
+                              font=('serif', 10, 'bold'),
                               fg=parse.Colors.WHITE,  # 'white',
-                              bg=parse.Colors.GREEN,  # '#018c48',
+                              bg=parse.Colors.CYAN,  # '#018c48',
                               anchor='w',
                               padx=20,
                               command=lambda: fix_Jobfile(parse.JobPath.rootpath)
                               )
-        updJOBButton.place(x=540, y=30, width=365)
+        updJOBButton.place(x=540, y=10, width=120)
+
+        updJOBButtonTXT = Button(self.job,
+                                 text='JOB to TXT',
+                                 font=('serif', 10, 'bold'),
+                                 fg=parse.Colors.WHITE,
+                                 bg=parse.Colors.CYAN,
+                                 anchor='w',
+                                 padx=20,
+                                 command=lambda: convert_job_xml_to_txt(parse.JobPath.rootpath)
+                                 )
+        updJOBButtonTXT.place(x=540, y=50, width=120)
+
+        def browse_for_job_folder():
+            selected_path = filedialog.askdirectory()
+            if selected_path:
+                parse.JobPath.rootpath = selected_path
+                print(f"New job folder selected: {selected_path}")
+                # Optional: refresh the TreeView here
+
+        browseButton = Button(self.job,
+                              text="Browse Job Folder",
+                              font=('serif', 10, 'bold'),
+                              fg=parse.Colors.WHITE,
+                              bg=parse.Colors.CYAN,
+                              anchor='w',
+                              padx=20,
+                              command=browse_for_job_folder)
+        browseButton.place(x=680, y=50, width=160)
 
         date = dt.datetime.now()
         subtitleLabel = Label(self.job,
@@ -83,6 +151,16 @@ class GaskUI:
         )
         menuLabel.pack(fill="x")
 
+        def validate_and_open_jobs():
+            rootpath = parse.JobPath.rootpath
+            if not rootpath or not os.path.isdir(rootpath) or not os.listdir(rootpath):
+                messagebox.showerror(
+                    "Invalid Job Folder",
+                    "⚠️ Please select a valid job folder before continuing."
+                )
+                return
+            job_list()
+
         self.coffee = PhotoImage(file="images/coffee_hot.png")
         jobs_button = Button(leftFrame,
                              text='Jobs',
@@ -92,10 +170,12 @@ class GaskUI:
                              padx=15,
                              cursor='circle',
                              bg=parse.Colors.GREENMATT,  # '#009688',
-                             command=job_list
+                             command=validate_and_open_jobs
                              )
         jobs_button.pack(fill="x")
         # jobs_button.configure(command=job_list())
+
+
 
         quotes_button = Button(leftFrame,
                                text='Quotes',
@@ -188,7 +268,9 @@ class FileApp(Frame):
 
         abspath = os.path.abspath(path)
         root_node = self.tree.insert('', 'end', text=abspath, open=True)
+        #self.process_directory(root_node, abspath, visited=set(), depth=0, max_depth=5)
         self.process_directory(root_node, abspath)
+
 
         # Without this line, horizontal scrolling doesn't work properly.
         self.tree.column('#0', width=400, stretch=True)
@@ -230,8 +312,38 @@ class FileApp(Frame):
             oid = self.tree.insert(parent, 'end', text=p, open=False, values=[abspath])
 
             if isdir:
-                self.process_directory(oid, abspath)
+               self.process_directory(oid, abspath)
 
+    '''
+    def process_directory(self, parent, path, visited, depth=0, max_depth=5):
+        if depth > max_depth:
+            return
+
+        try:
+            real_path = os.path.realpath(path)
+            if real_path in visited:
+                return
+            visited.add(real_path)
+
+            entries = os.listdir(path)
+        except Exception:
+            return
+
+        for entry in entries:
+            if entry.startswith('.'):
+                continue
+
+            abspath = os.path.join(path, entry)
+            isdir = os.path.isdir(abspath)
+
+            try:
+                oid = self.tree.insert(parent, 'end', text=entry, open=False, values=[abspath])
+            except Exception:
+                continue
+
+            if isdir:
+                self.process_directory(oid, abspath, visited, depth + 1, max_depth)
+        '''
     def open_file(self,file_path):
         if platform.system() == "Windows":
             #try:
@@ -293,7 +405,40 @@ class SUMMJOB:
 
         SUMMJOB.summarize_job(getresult)
 
+def convert_job_xml_to_txt(startnode):
+    for f_job in os.listdir(startnode):
+        full_path = os.path.join(startnode, f_job)
 
+        if os.path.isdir(full_path):
+            convert_job_xml_to_txt(full_path)  # Recurse
+            continue
+
+        if f_job.startswith("JOB") and f_job.endswith(".xml"):
+            try:
+                tree = ET.parse(full_path)
+                root = tree.getroot()
+                pais = root.find('pais')
+                if pais is None:
+                    print(f"No <pais> section found in {f_job}")
+                    continue
+
+                lines = []
+                for l1 in pais.findall('l1'):
+                    if l1.text:
+                        clean_line = l1.text.strip()
+                        lines.append(clean_line)
+
+                if lines:
+                    txt_filename = f_job.replace(".xml", ".txt")
+                    txt_path = os.path.join(startnode, txt_filename)
+                    with open(txt_path, "w") as txtfile:
+                        txtfile.write('\n'.join(lines))
+                    print(f"Converted {f_job} to {txt_filename}")
+                else:
+                    print(f"No valid <l1> entries in {f_job}")
+
+            except ET.ParseError as e:
+                print(f"Parse error in {f_job}: {e}")
 #Original JOB file has no xml tags inside and has no xml formatting.
 #The file with this utility is being edited for browser readability
 #Elements <JOB> is added. Indented child tag <pais> added.
@@ -424,7 +569,7 @@ def job_list():
                                bg=parse.Colors.ICE,
                                width=10,
                                cursor='hand2'
-                               , command=lambda: FileApp(day_jobs_view, path=path_to_my_project)
+                               , command=lambda: FileApp(day_jobs_view, path=parse.JobPath.rootpath)
                                )
         search_button.grid(row=0, column=2, padx=10)
 
@@ -520,6 +665,7 @@ def job_list():
     detail_section_frame()
     question_section_frame()
     search_summ_frame()
+
 
 # GUI
 job = Tk()

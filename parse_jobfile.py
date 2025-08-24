@@ -2,9 +2,15 @@ import re, os
 from tkinter import BooleanVar
 from typing import Dict, List, Union
 
+#class JobPath:
+ #   filepath = "C:\\Users\\Ayan Bhattacharya\\PycharmProjects\\maashiProject"
+  #  rootpath = "C:\\Users\\Ayan Bhattacharya\\PycharmProjects\\maashiProject\\GasketUI\\Jobs"
+
 class JobPath:
-    filepath = "C:\\Users\\Bashobi\\PycharmProjects\\PythonProject\\GasketUI\\Jobs\\Day_1"
-    rootpath = "C:\\Users\\Bashobi\\PycharmProjects\\PythonProject\\GasketUI\\Jobs"
+    filepath = ""
+    rootpath = "C:\\Users\\Default\\Start\\Path"  # initial fallback, unused once set
+
+
 
 class Quote:
     QUANTITY: str = 'Quantity'
