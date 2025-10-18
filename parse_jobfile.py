@@ -8,7 +8,12 @@ from typing import Dict, List, Union
 
 class JobPath:
     filepath = ""
-    rootpath = "C:\\Users\\Default\\Start\\Path"  # initial fallback, unused once set
+    rootpath = "C:\\Users\\Default\\Start\\Path"
+
+    @classmethod
+    def tmpfile_path(cls):
+        return os.path.join(cls.rootpath, "tmp_file")
+
 
 
 

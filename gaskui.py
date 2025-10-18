@@ -294,7 +294,7 @@ class FileApp(Frame):
         #p=os.path.dirname(file_path)   #Extract Job file name
         p=parse.JobPath.rootpath
         juuid=f.split('.') # Separate filename from extension
-        tmpf=os.path.join(p,'tmp_file') #Temporary file in same location
+        tmpf = parse.JobPath.tmpfile_path()
 
         print(f" Write {juuid[0]}  into file {tmpf}")
         f_job = juuid[0]
@@ -378,7 +378,7 @@ class FileApp(Frame):
 
 class SUMMJOB:
     def read_tmp_file():
-        filepath=os.path.join(parse.JobPath.rootpath, 'tmp_file')
+        filepath = parse.JobPath.tmpfile_path()
 
         with open(filepath, 'r') as file:
             juuid = file.readlines()
@@ -577,7 +577,7 @@ def job_list():
 
     def search_summ_frame():
         juuid = SUMMJOB.read_tmp_file()
-        filepath=os.path.join(parse.JobPath.rootpath, 'tmp_file')
+        filepath = parse.JobPath.tmpfile_path()
 
         with open(filepath, 'r') as file:
             juuid = file.readlines()
