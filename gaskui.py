@@ -99,22 +99,6 @@ class GaskUI:
                                  )
         updJOBButtonTXT.place(x=540, y=50, width=120)
 
-        def browse_for_job_folder():
-            selected_path = filedialog.askdirectory()
-            if selected_path:
-                parse.JobPath.rootpath = selected_path
-                print(f"New job folder selected: {selected_path}")
-                # Optional: refresh the TreeView here
-
-        browseButton = Button(self.job,
-                              text="Browse Job Folder",
-                              font=('serif', 10, 'bold'),
-                              fg=parse.Colors.WHITE,
-                              bg=parse.Colors.CYAN,
-                              anchor='w',
-                              padx=20,
-                              command=browse_for_job_folder)
-        browseButton.place(x=680, y=50, width=160)
 
         date = dt.datetime.now()
         subtitleLabel = Label(self.job,
@@ -151,15 +135,13 @@ class GaskUI:
         )
         menuLabel.pack(fill="x")
 
-        def validate_and_open_jobs():
-            rootpath = parse.JobPath.rootpath
-            if not rootpath or not os.path.isdir(rootpath) or not os.listdir(rootpath):
-                messagebox.showerror(
-                    "Invalid Job Folder",
-                    "⚠️ Please select a valid job folder before continuing."
-                )
-                return
-            job_list()
+        self.coffee = PhotoImage(file="images/coffee_hot.png")
+
+        def open_folder_and_job_list():
+            selected_path = filedialog.askdirectory()
+            if selected_path:
+                parse.JobPath.rootpath = selected_path
+                job_list()  # Open job list view with new rootpath
 
         self.coffee = PhotoImage(file="images/coffee_hot.png")
         jobs_button = Button(leftFrame,
@@ -169,13 +151,10 @@ class GaskUI:
                              compound=LEFT,
                              padx=15,
                              cursor='circle',
-                             bg=parse.Colors.GREENMATT,  # '#009688',
-                             command=validate_and_open_jobs
+                             bg=parse.Colors.GREENMATT,
+                             command=open_folder_and_job_list  # <-- direct call to your new function
                              )
         jobs_button.pack(fill="x")
-        # jobs_button.configure(command=job_list())
-
-
 
         quotes_button = Button(leftFrame,
                                text='Quotes',
@@ -534,6 +513,7 @@ def job_list():
     def search_section_frame():
         search_frame = Frame(top_panel_frame)
         search_frame.grid()
+
         search_combobox = ttk.Combobox(
             search_frame,
             values=('Job', 'TX', 'All'),
@@ -543,34 +523,34 @@ def job_list():
         )
         search_combobox.set('Search')
         search_combobox.grid(row=0, column=0, padx=10)
-        search_entry = Entry(search_frame,
-                             font=('arial', 13)
-                             )
+        search_entry = Entry(search_frame, font=('arial', 13))
         search_entry.grid(row=0, column=1)
 
-        vert_scroll = Scrollbar(top_panel_frame, orient=VERTICAL)
-        hor_scroll = Scrollbar(top_panel_frame, orient=HORIZONTAL)
+        # --- Tree frame that only ever contains one tree at a time ---
+        tree_frame = Frame(top_panel_frame)
+        tree_frame.grid(row=1, column=0, columnspan=3, pady=(10, 0), sticky='nsew')
 
-        day_jobs_view = ttk.Treeview(top_panel_frame,
-                                     columns='File',
-                                     show='headings',
-                                     yscrollcommand=vert_scroll.set,
-                                     xscrollcommand=hor_scroll.set
-                                     )
+        # Show file tree right away, using the currently selected folder
+        FileApp(tree_frame, path=parse.JobPath.rootpath)
 
-        day_jobs_view.grid(pady=10)
-        day_jobs_view.heading('File', text='Job UUID')
-        day_jobs_view.column('File', width=380, minwidth=300)
-        # day_jobs_view.configure(FileApp(top_panel_frame,path=path_to_my_project))
+        def browse_and_update():
+            selected_path = filedialog.askdirectory()
+            if selected_path:
+                parse.JobPath.rootpath = selected_path
+                # Clear the existing tree before showing the new one
+                for widget in tree_frame.winfo_children():
+                    widget.destroy()
+                FileApp(tree_frame, path=parse.JobPath.rootpath)
 
-        search_button = Button(search_frame,
-                               text='Search',
-                               font=('arial', 13),
-                               bg=parse.Colors.ICE,
-                               width=10,
-                               cursor='hand2'
-                               , command=lambda: FileApp(day_jobs_view, path=parse.JobPath.rootpath)
-                               )
+        search_button = Button(
+            search_frame,
+            text='Search',
+            font=('arial', 13),
+            bg=parse.Colors.ICE,
+            width=10,
+            cursor='hand2',
+            command=browse_and_update
+        )
         search_button.grid(row=0, column=2, padx=10)
 
         # Search Section Frame
@@ -587,7 +567,7 @@ def job_list():
         print(f" Tmp file contents {juuid}")
         summ_frame = Frame(job_list_frame,
                            bg=parse.Colors.ICE)
-        summ_frame.place(x=0, y=310, relwidth=1, height=30)
+        summ_frame.place(x=0, y=360, relwidth=1, height=30)
         summ_frame_label = Label(summ_frame,
                                      text='Job(without .xml)',
                                      font=('arial', 10),
@@ -629,10 +609,10 @@ def job_list():
         return detail_frame
 
     ##Middle Questionnaire section
+
     def question_section_frame():
-        question_frame = Frame(job_list_frame,
-                               bd=4)
-        question_frame.place(x=0, y=260, relwidth=1, height=115)
+        question_frame = Frame(job_list_frame, bd=4)
+        question_frame.place(x=0, y=320, relwidth=1, height=115)
         question_combobox = ttk.Combobox(
             question_frame,
             values=(opt1, opt2, opt3, opt4),
@@ -640,6 +620,7 @@ def job_list():
             state='readonly',
             width=30
         )
+
         question_frame_label = Label(question_frame,
                                      text='What is your choice?',
                                      font=('arial', 12),
@@ -655,6 +636,8 @@ def job_list():
                                  command=lambda: parse.prepare_summary()
                                  )
         question_button.grid(row=1, column=2)
+
+
         #copy_button = Button(question_frame,
         #                         text='Focus on JobName and Click',
         #                         command=lambda: readQuotefile.demo_qty_and_price()
