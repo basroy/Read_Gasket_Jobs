@@ -31,7 +31,7 @@ def read_jobs(is_job_name: str, filepath: str):
    # Associate path to the string which is the JOB file
     jobfile = os.path.join(filepath,jobfile+ '.xml')
     print(f"Fill JOb file {jobfile}")
-# THis section is to read JOB as an xmlftmp_
+# THis section is to read JOB as an xml
     try:
         xml_qu = Et.parse(jobfile)
     except Et.ParseError:

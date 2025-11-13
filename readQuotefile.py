@@ -52,7 +52,7 @@ def setElementValue(parent, name, value):
     return None
 
 def read_tmp_file():
-    filepath=os.path.join(parse.JobPath.rootpath, 'tmp_file')
+    filepath = parse.JobPath.tmpfile_path()
 
     with open(filepath, 'r') as file:
         juuid = file.readlines()

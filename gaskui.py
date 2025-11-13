@@ -7,6 +7,10 @@ import subprocess
 import platform
 import readQuotefile
 import datetime as dt
+import xml.etree.ElementTree as ET
+from tkinter import filedialog
+from tkinter import messagebox
+
 
 opt1: str = 'View Quantity on all Job Quotes'
 opt2: str = 'View Quantity and Price on all Job Quotes'
@@ -16,6 +20,42 @@ opt4: str = 'View Quantity and Price on final Job Quote'
 #path_to_my_project = 'C:\\Users\\Bashobi\\PycharmProjects\\PythonProject\\GasketUI\\Jobs'
 path_to_my_project = parse.JobPath.rootpath
 
+"""
+def convert_job_xml_to_txt(startnode):
+    for f_job in os.listdir(startnode):
+        full_path = os.path.join(startnode, f_job)
+
+        if os.path.isdir(full_path):
+            convert_job_xml_to_txt(full_path)  # Recurse
+            continue
+
+        if f_job.startswith("JOB") and f_job.endswith(".xml"):
+            try:
+                tree = ET.parse(full_path)
+                root = tree.getroot()
+                pais = root.find('pais')
+                if pais is None:
+                    print(f"No <pais> section found in {f_job}")
+                    continue
+
+                lines = []
+                for l1 in pais.findall('l1'):
+                    if l1.text:
+                        clean_line = l1.text.strip()
+                        lines.append(clean_line)
+
+                if lines:
+                    txt_filename = f_job.replace(".xml", ".txt")
+                    txt_path = os.path.join(startnode, txt_filename)
+                    with open(txt_path, "w") as txtfile:
+                        txtfile.write('\n'.join(lines))
+                    print(f"Converted {f_job} to {txt_filename}")
+                else:
+                    print(f"No valid <l1> entries in {f_job}")
+
+            except ET.ParseError as e:
+                print(f"Parse error in {f_job}: {e}")
+"""
 class GaskUI:
     def __init__(self, job):
         self.job = job
@@ -28,7 +68,7 @@ class GaskUI:
         jobLabel = Label(self.job,
                          image=self.titleImage,
                          compound=LEFT,
-                         text='Preview Glenn''s Gasket Job Quotes',
+                         text='Preview Daily Job Quotes',
                          font=('serif', 14, 'bold'),
                          fg=parse.Colors.WHITE,
                          bg=parse.Colors.GREEN,
@@ -38,15 +78,27 @@ class GaskUI:
         jobLabel.place(x=40, y=10, relwidth=1)
 
         updJOBButton = Button(self.job,
-                              text='Click to convert JOB to xml format',
-                              font=('serif', 15, 'bold'),
+                              text='JOB to XML',
+                              font=('serif', 10, 'bold'),
                               fg=parse.Colors.WHITE,  # 'white',
-                              bg=parse.Colors.GREEN,  # '#018c48',
+                              bg=parse.Colors.CYAN,  # '#018c48',
                               anchor='w',
                               padx=20,
                               command=lambda: fix_Jobfile(parse.JobPath.rootpath)
                               )
-        updJOBButton.place(x=540, y=30, width=365)
+        updJOBButton.place(x=540, y=10, width=120)
+
+        updJOBButtonTXT = Button(self.job,
+                                 text='JOB to TXT',
+                                 font=('serif', 10, 'bold'),
+                                 fg=parse.Colors.WHITE,
+                                 bg=parse.Colors.CYAN,
+                                 anchor='w',
+                                 padx=20,
+                                 command=lambda: convert_job_xml_to_txt(parse.JobPath.rootpath)
+                                 )
+        updJOBButtonTXT.place(x=540, y=50, width=120)
+
 
         date = dt.datetime.now()
         subtitleLabel = Label(self.job,
@@ -84,6 +136,14 @@ class GaskUI:
         menuLabel.pack(fill="x")
 
         self.coffee = PhotoImage(file="images/coffee_hot.png")
+
+        def open_folder_and_job_list():
+            selected_path = filedialog.askdirectory()
+            if selected_path:
+                parse.JobPath.rootpath = selected_path
+                job_list()  # Open job list view with new rootpath
+
+        self.coffee = PhotoImage(file="images/coffee_hot.png")
         jobs_button = Button(leftFrame,
                              text='Jobs',
                              font=('serif', 13),
@@ -91,11 +151,10 @@ class GaskUI:
                              compound=LEFT,
                              padx=15,
                              cursor='circle',
-                             bg=parse.Colors.GREENMATT,  # '#009688',
-                             command=job_list
+                             bg=parse.Colors.GREENMATT,
+                             command=open_folder_and_job_list  # <-- direct call to your new function
                              )
         jobs_button.pack(fill="x")
-        # jobs_button.configure(command=job_list())
 
         quotes_button = Button(leftFrame,
                                text='Quotes',
@@ -188,7 +247,9 @@ class FileApp(Frame):
 
         abspath = os.path.abspath(path)
         root_node = self.tree.insert('', 'end', text=abspath, open=True)
+        #self.process_directory(root_node, abspath, visited=set(), depth=0, max_depth=5)
         self.process_directory(root_node, abspath)
+
 
         # Without this line, horizontal scrolling doesn't work properly.
         self.tree.column('#0', width=400, stretch=True)
@@ -212,7 +273,7 @@ class FileApp(Frame):
         #p=os.path.dirname(file_path)   #Extract Job file name
         p=parse.JobPath.rootpath
         juuid=f.split('.') # Separate filename from extension
-        tmpf=os.path.join(p,'tmp_file') #Temporary file in same location
+        tmpf = parse.JobPath.tmpfile_path()
 
         print(f" Write {juuid[0]}  into file {tmpf}")
         f_job = juuid[0]
@@ -230,8 +291,38 @@ class FileApp(Frame):
             oid = self.tree.insert(parent, 'end', text=p, open=False, values=[abspath])
 
             if isdir:
-                self.process_directory(oid, abspath)
+               self.process_directory(oid, abspath)
 
+    '''
+    def process_directory(self, parent, path, visited, depth=0, max_depth=5):
+        if depth > max_depth:
+            return
+
+        try:
+            real_path = os.path.realpath(path)
+            if real_path in visited:
+                return
+            visited.add(real_path)
+
+            entries = os.listdir(path)
+        except Exception:
+            return
+
+        for entry in entries:
+            if entry.startswith('.'):
+                continue
+
+            abspath = os.path.join(path, entry)
+            isdir = os.path.isdir(abspath)
+
+            try:
+                oid = self.tree.insert(parent, 'end', text=entry, open=False, values=[abspath])
+            except Exception:
+                continue
+
+            if isdir:
+                self.process_directory(oid, abspath, visited, depth + 1, max_depth)
+        '''
     def open_file(self,file_path):
         if platform.system() == "Windows":
             #try:
@@ -266,7 +357,7 @@ class FileApp(Frame):
 
 class SUMMJOB:
     def read_tmp_file():
-        filepath=os.path.join(parse.JobPath.rootpath, 'tmp_file')
+        filepath = parse.JobPath.tmpfile_path()
 
         with open(filepath, 'r') as file:
             juuid = file.readlines()
@@ -293,7 +384,40 @@ class SUMMJOB:
 
         SUMMJOB.summarize_job(getresult)
 
+def convert_job_xml_to_txt(startnode):
+    for f_job in os.listdir(startnode):
+        full_path = os.path.join(startnode, f_job)
 
+        if os.path.isdir(full_path):
+            convert_job_xml_to_txt(full_path)  # Recurse
+            continue
+
+        if f_job.startswith("JOB") and f_job.endswith(".xml"):
+            try:
+                tree = ET.parse(full_path)
+                root = tree.getroot()
+                pais = root.find('pais')
+                if pais is None:
+                    print(f"No <pais> section found in {f_job}")
+                    continue
+
+                lines = []
+                for l1 in pais.findall('l1'):
+                    if l1.text:
+                        clean_line = l1.text.strip()
+                        lines.append(clean_line)
+
+                if lines:
+                    txt_filename = f_job.replace(".xml", ".txt")
+                    txt_path = os.path.join(startnode, txt_filename)
+                    with open(txt_path, "w") as txtfile:
+                        txtfile.write('\n'.join(lines))
+                    print(f"Converted {f_job} to {txt_filename}")
+                else:
+                    print(f"No valid <l1> entries in {f_job}")
+
+            except ET.ParseError as e:
+                print(f"Parse error in {f_job}: {e}")
 #Original JOB file has no xml tags inside and has no xml formatting.
 #The file with this utility is being edited for browser readability
 #Elements <JOB> is added. Indented child tag <pais> added.
@@ -389,6 +513,7 @@ def job_list():
     def search_section_frame():
         search_frame = Frame(top_panel_frame)
         search_frame.grid()
+
         search_combobox = ttk.Combobox(
             search_frame,
             values=('Job', 'TX', 'All'),
@@ -398,41 +523,41 @@ def job_list():
         )
         search_combobox.set('Search')
         search_combobox.grid(row=0, column=0, padx=10)
-        search_entry = Entry(search_frame,
-                             font=('arial', 13)
-                             )
+        search_entry = Entry(search_frame, font=('arial', 13))
         search_entry.grid(row=0, column=1)
 
-        vert_scroll = Scrollbar(top_panel_frame, orient=VERTICAL)
-        hor_scroll = Scrollbar(top_panel_frame, orient=HORIZONTAL)
+        # --- Tree frame that only ever contains one tree at a time ---
+        tree_frame = Frame(top_panel_frame)
+        tree_frame.grid(row=1, column=0, columnspan=3, pady=(10, 0), sticky='nsew')
 
-        day_jobs_view = ttk.Treeview(top_panel_frame,
-                                     columns='File',
-                                     show='headings',
-                                     yscrollcommand=vert_scroll.set,
-                                     xscrollcommand=hor_scroll.set
-                                     )
+        # Show file tree right away, using the currently selected folder
+        FileApp(tree_frame, path=parse.JobPath.rootpath)
 
-        day_jobs_view.grid(pady=10)
-        day_jobs_view.heading('File', text='Job UUID')
-        day_jobs_view.column('File', width=380, minwidth=300)
-        # day_jobs_view.configure(FileApp(top_panel_frame,path=path_to_my_project))
+        def browse_and_update():
+            selected_path = filedialog.askdirectory()
+            if selected_path:
+                parse.JobPath.rootpath = selected_path
+                # Clear the existing tree before showing the new one
+                for widget in tree_frame.winfo_children():
+                    widget.destroy()
+                FileApp(tree_frame, path=parse.JobPath.rootpath)
 
-        search_button = Button(search_frame,
-                               text='Search',
-                               font=('arial', 13),
-                               bg=parse.Colors.ICE,
-                               width=10,
-                               cursor='hand2'
-                               , command=lambda: FileApp(day_jobs_view, path=path_to_my_project)
-                               )
+        search_button = Button(
+            search_frame,
+            text='Search',
+            font=('arial', 13),
+            bg=parse.Colors.ICE,
+            width=10,
+            cursor='hand2',
+            command=browse_and_update
+        )
         search_button.grid(row=0, column=2, padx=10)
 
         # Search Section Frame
 
     def search_summ_frame():
         juuid = SUMMJOB.read_tmp_file()
-        filepath=os.path.join(parse.JobPath.rootpath, 'tmp_file')
+        filepath = parse.JobPath.tmpfile_path()
 
         with open(filepath, 'r') as file:
             juuid = file.readlines()
@@ -442,7 +567,7 @@ def job_list():
         print(f" Tmp file contents {juuid}")
         summ_frame = Frame(job_list_frame,
                            bg=parse.Colors.ICE)
-        summ_frame.place(x=0, y=310, relwidth=1, height=30)
+        summ_frame.place(x=0, y=360, relwidth=1, height=30)
         summ_frame_label = Label(summ_frame,
                                      text='Job(without .xml)',
                                      font=('arial', 10),
@@ -484,10 +609,10 @@ def job_list():
         return detail_frame
 
     ##Middle Questionnaire section
+
     def question_section_frame():
-        question_frame = Frame(job_list_frame,
-                               bd=4)
-        question_frame.place(x=0, y=260, relwidth=1, height=115)
+        question_frame = Frame(job_list_frame, bd=4)
+        question_frame.place(x=0, y=320, relwidth=1, height=115)
         question_combobox = ttk.Combobox(
             question_frame,
             values=(opt1, opt2, opt3, opt4),
@@ -495,6 +620,7 @@ def job_list():
             state='readonly',
             width=30
         )
+
         question_frame_label = Label(question_frame,
                                      text='What is your choice?',
                                      font=('arial', 12),
@@ -510,6 +636,8 @@ def job_list():
                                  command=lambda: parse.prepare_summary()
                                  )
         question_button.grid(row=1, column=2)
+
+
         #copy_button = Button(question_frame,
         #                         text='Focus on JobName and Click',
         #                         command=lambda: readQuotefile.demo_qty_and_price()
@@ -520,6 +648,7 @@ def job_list():
     detail_section_frame()
     question_section_frame()
     search_summ_frame()
+
 
 # GUI
 job = Tk()
